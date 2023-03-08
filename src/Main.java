@@ -4,6 +4,7 @@ public class Main {
         for (int i = 0; i < 10; i++ ){
             if (i == 3){
                 break;
+                //return;
                 //continue;
             } else {
                 System.out.println(i);
