@@ -1,9 +1,11 @@
 package conditional;
 
 public class BooleanOperator {
-    // i = 0
-    // j = 7
-    //k = 13
+
+public static void main() {
+    int i = 0;
+    int j = 7;
+    int k = 13;
 
     // Snippet 1
 
@@ -70,4 +72,5 @@ if (i != 0 & j++ < 5) {
         // j = 8
         //k = 13
     }
+        }
 }

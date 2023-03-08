@@ -1,5 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        for (int i = 0; i < 10; i++ ){
+            if (i == 3){
+                break;
+                //continue;
+            } else {
+                System.out.println(i);
+            }
+        }
     }
 }
