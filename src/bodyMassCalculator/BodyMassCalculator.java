@@ -15,8 +15,7 @@ public class BodyMassCalculator {
         double calculatedBmi = calculateBmi(weight, height);
         BmiClassification classifiedBmi = classifyBMI(calculatedBmi);
 
-       // System.out.println(MessageFormat.format("Your bmi is {0}, so you are ", calculatedBmi, classifiedBmi));
-        System.out.println("Your bmi is " + calculatedBmi + ".");
+        System.out.println(MessageFormat.format("Your bmi is {0}, so you are {1}", calculatedBmi, classifiedBmi.toString().toLowerCase()));
     }
 
     /**
