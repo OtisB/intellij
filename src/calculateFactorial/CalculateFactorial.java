@@ -15,6 +15,12 @@ public class CalculateFactorial {
         System.out.println(MessageFormat.format("The factorial of {0} is: {1}", i,  fact(i)));
 
     }
+
+    /**
+     * Method to calculate the factorial of any given positive integer
+     * @param n starting value
+     * @ the calculated factorial of n with an recursive solution
+     */
     public static long fact(long n) {
         if (n <= 1)
             return 1;
