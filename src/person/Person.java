@@ -62,9 +62,9 @@ public class Person {
 
     @Override
     public boolean equals(Object o) {
-        //exact same object(adress ist the same)
+        //exact same object(address ist the same)
         if (this == o) return true;
-        // o is null || o ist not the same kind of object like this
+        // o is null || o ist not the same kind of class like this
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
         //performance intensive
