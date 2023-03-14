@@ -15,6 +15,6 @@ class PersonTest {
     }
     @Test
     void personIsNotEqual() {
-        assertEquals(testPerson1, testPerson2);
+        assertNotEquals(testPerson1, testPerson2);
     }
 }
