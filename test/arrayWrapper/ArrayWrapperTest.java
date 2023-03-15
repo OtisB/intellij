@@ -5,51 +5,57 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ArrayWrapperTest {
-
-    private ArrayWrapper testArray;
-
-    @BeforeEach
-    public void initArray() {
-        int initialArraySize = 4;
-        testArray = new ArrayWrapper(initialArraySize);
-    }
+public class ArrayWrapperTest {
 
     @Test
-    public void getArraySize() {
-        assertEquals(3, new ArrayWrapper(3).getArraySize());
-        assertEquals(7, new ArrayWrapper(7).getArraySize());
-        assertEquals(8, new ArrayWrapper(8).getArraySize());
-    }
+    public void shouldAddElement() {
+        ArrayWrapper arrayWrapper = new ArrayWrapper<>(3);
 
-    @Test
-    public void add() {
-        testArray.add(1);
-        testArray.add(2);
-        testArray.add(3);
+        arrayWrapper.add(1);
+        arrayWrapper.add(2);
+        arrayWrapper.add(3);
 
-        assertEquals(1, testArray.get(0));
-        assertEquals(2, testArray.get(1));
-        assertEquals(3, testArray.get(2));
+        int expectedFirstElement = 1;
+        int expectedSecondElement = 2;
+        int expectedThirdElement = 3;
+
+        int firstElement = arrayWrapper.get(0);
+        int secondElement = arrayWrapper.get(1);
+        int thirdElement = arrayWrapper.get(2);
+
+        assertEquals(expectedFirstElement, firstElement);
+        assertEquals(expectedSecondElement, secondElement);
+        assertEquals(expectedThirdElement, thirdElement);
     }
 
 
     @Test
-   public void testArraySizeGrow() {
-        testArray.add(1);
-        testArray.add(2);
-        testArray.add(3);
-        testArray.add(4);
-        testArray.add(5);
+    public void testArraySizeDoubling() {
+        ArrayWrapper arrayWrapper = new ArrayWrapper<>(3);
 
-        assertEquals(8, testArray.getArraySize());
+        arrayWrapper.add(1);
+        arrayWrapper.add(2);
+        arrayWrapper.add(3);
+        arrayWrapper.add(4);
+
+        int expectedArraySize = 6;
+        int arraySize = arrayWrapper.getArraySize();
+
+        assertEquals(expectedArraySize, arraySize);
     }
 
 
     @Test
-    public void getElementCount() {
-        testArray.add(1);
-        testArray.add(2);
-        assertEquals(2, testArray.getElementCount());
+    public void shouldGetCorrectElementCount() {
+        ArrayWrapper arrayWrapper = new ArrayWrapper<>(3);
+
+        arrayWrapper.add(1);
+        arrayWrapper.add(2);
+        arrayWrapper.add(3);
+
+        int expectedElementCount = 3;
+        int elementCount = arrayWrapper.getElementCount();
+
+        assertEquals(expectedElementCount, elementCount);
     }
 }
