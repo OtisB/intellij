@@ -1,5 +1,7 @@
 package arrayWrapper;
 
+import java.util.Arrays;
+
 public class ArrayWrapper {
     private int[] array;
     private int elementCount = 0;
@@ -21,12 +23,9 @@ public class ArrayWrapper {
      * @param element to add
      */
      public void add(int element) {
-        if (this.elementCount >= this.array.length) {
-            int[] newArray = new int[this.array.length * 2];
-            System.arraycopy(array, 0, newArray, 0, this.array.length);
-            this.array = newArray;
-        }
-        array[elementCount++] = element;
+        if (this.elementCount >= this.array.length)
+            this.array = Arrays.copyOf(this.array, this.array.length * 2);
+        this.array[elementCount++] = element;
     }
 
     /**
