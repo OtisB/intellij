@@ -17,9 +17,9 @@ class ArrayWrapperTest {
 
     @Test
     public void getArraySize() {
-        assertEquals(new ArrayWrapper(3).getArraySize(), 3);
-        assertEquals(new ArrayWrapper(7).getArraySize(), 7);
-        assertEquals(new ArrayWrapper(8).getArraySize(), 8);
+        assertEquals(3, new ArrayWrapper(3).getArraySize());
+        assertEquals(7, new ArrayWrapper(7).getArraySize());
+        assertEquals(8, new ArrayWrapper(8).getArraySize());
     }
 
     @Test
@@ -28,21 +28,21 @@ class ArrayWrapperTest {
         testArray.add(2);
         testArray.add(3);
 
-        assertEquals(testArray.get(0), 1);
-        assertEquals(testArray.get(1), 2);
-        assertEquals(testArray.get(2), 3);
+        assertEquals(1, testArray.get(0));
+        assertEquals(2, testArray.get(1));
+        assertEquals(3, testArray.get(2));
     }
 
+
     @Test
-   public void testArraySize() {
+   public void testArraySizeGrow() {
         testArray.add(1);
         testArray.add(2);
         testArray.add(3);
         testArray.add(4);
         testArray.add(5);
 
-
-        assertEquals(testArray.getArraySize(), 8);
+        assertEquals(8, testArray.getArraySize());
     }
 
 
@@ -50,6 +50,6 @@ class ArrayWrapperTest {
     public void getElementCount() {
         testArray.add(1);
         testArray.add(2);
-        assertEquals(testArray.getElementCount(), 2);
+        assertEquals(2, testArray.getElementCount());
     }
 }
