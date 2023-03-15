@@ -40,7 +40,7 @@ public class ArrayWrapper {
 
     /**
      * Method to see how many elements the array currently holds
-     * @return current element in array
+     * @return current count of elements in array
      */
     public int getElementCount() {
         return elementCount;
