@@ -12,7 +12,7 @@ public class ObjectCopier {
      * @param numberOfCopies defines how many shallow copies are made to fill the List with
      * @return a List of shallow copies of a Person object
      */
-    public static List<Person> shallowCopy(Person person, int numberOfCopies ) {
+    public static List<Person> shallowCopy(Person person, Integer numberOfCopies ) {
 
         List<Person> shallowCopies = new ArrayList<>();
 
@@ -31,7 +31,8 @@ public class ObjectCopier {
      * @return a List of shallow copies of a Person object
      * @param <T> generic type which is excepted
      */
-    public static <T> List<T> genericShallowCopy(T o, int numberOfCopies ) {
+    //static <T> <T> is here only needed because method is static
+    public static <T> List<T> genericShallowCopy(T o, Integer numberOfCopies ) {
 
         List<T> shallowCopies = new ArrayList<>();
 
