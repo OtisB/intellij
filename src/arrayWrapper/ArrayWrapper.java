@@ -31,7 +31,7 @@ public class ArrayWrapper {
 
     /**
      * Method to get access to element as specific index
-     * @param index
+     * @param index to access specific array position
      * @return integer value of interest
      */
     public int get(int index) {
