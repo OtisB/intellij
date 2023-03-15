@@ -11,32 +11,45 @@ class ArrayWrapperTest {
 
     @BeforeEach
     public void initArray() {
-        testArray = new ArrayWrapper(3);
+        int initialArraySize = 4;
+        testArray = new ArrayWrapper(initialArraySize);
+    }
+
+    @Test
+    public void getArraySize() {
+        assertEquals(new ArrayWrapper(3).getArraySize(), 3);
+        assertEquals(new ArrayWrapper(7).getArraySize(), 7);
+        assertEquals(new ArrayWrapper(8).getArraySize(), 8);
+    }
+
+    @Test
+    public void add() {
         testArray.add(1);
         testArray.add(2);
-    }
-
-    @Test
-    void getArraySize() {
-        assertEquals(testArray.getArraySize(), 3);
-    }
-
-    @Test
-    void add() {
         testArray.add(3);
-        System.out.println(testArray.getArraySize());
-        testArray.add(4);
-        System.out.println("New element added. Array size increase");
-        System.out.println(testArray.getArraySize());
-    }
 
-    @Test
-    void get() {
+        assertEquals(testArray.get(0), 1);
         assertEquals(testArray.get(1), 2);
+        assertEquals(testArray.get(2), 3);
     }
 
     @Test
-    void getElementCount() {
+   public void testArraySize() {
+        testArray.add(1);
+        testArray.add(2);
+        testArray.add(3);
+        testArray.add(4);
+        testArray.add(5);
+
+
+        assertEquals(testArray.getArraySize(), 8);
+    }
+
+
+    @Test
+    public void getElementCount() {
+        testArray.add(1);
+        testArray.add(2);
         assertEquals(testArray.getElementCount(), 2);
     }
 }
