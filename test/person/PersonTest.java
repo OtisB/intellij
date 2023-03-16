@@ -2,6 +2,9 @@ package person;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
@@ -17,5 +20,16 @@ class PersonTest {
     @Test
     void personIsNotEqual() {
         assertNotEquals(testPerson1, testPerson3);
+    }
+
+    @Test
+    void testHashMap() {
+        Map<Person, Integer> testPersonMap = new HashMap<>();
+
+        testPersonMap.put(testPerson1, 1);
+        testPersonMap.put(testPerson2, 2);
+
+        assertEquals(2, testPersonMap.get(testPerson2));
+
     }
 }

@@ -60,19 +60,23 @@ public class Person {
         this.weight = weight;
     }
 
+    //implement equals and hashCode always together!!
+    // hash is definitely faster
     @Override
     public boolean equals(Object o) {
-        //exact same object(address ist the same)
         if (this == o) return true;
-        // o is null || o ist not the same kind of class like this
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        //performance intensive
         return Objects.equals(age, person.age) &&
                 Objects.equals(lastName, person.lastName) &&
                 Objects.equals(firstName, person.firstName) &&
                 Objects.equals(height, person.height) &&
                 Objects.equals(weight, person.weight);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(age, lastName, firstName, height, weight);
     }
 
     @Override
