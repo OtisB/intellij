@@ -1,5 +1,6 @@
 import copyingObjects.ObjectCopier;
 import person.Person;
+import person.PersonAgeComparator;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -8,15 +9,17 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        Person HansPeter = new Person(65, "Geerdes", "Hans Peter", 1.86, 82.3);
+        Person p1 = new Person(65, "Geerdes", "Hans Peter", 1.86, 82.3);
+        Person p2 = new Person(69, "Geerdes", "Hans Peter", 1.86, 82.3);
+        Person p3 = new Person(67, "Geerdes", "Hans Peter", 1.86, 82.3);
 
-        //List<Person> shallowCopies = ObjectCopier.shallowCopy(HansPeter, 6);
-        //System.out.println(shallowCopies);
+        List<Person> compareList = new ArrayList<>();
+        compareList.add(p1);
+        compareList.add(p2);
+        compareList.add(p3);
 
-        List<Person> genericShallowCopies = ObjectCopier.genericShallowCopy(HansPeter, 6);
-        System.out.println(genericShallowCopies);
+        compareList.sort(new PersonAgeComparator());
 
-        genericShallowCopies.get(0).setAge(70);
-        System.out.println(genericShallowCopies);
+        System.out.println(compareList);
     }
 }
