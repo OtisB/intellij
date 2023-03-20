@@ -9,9 +9,9 @@ import java.util.Objects;
 public class Person {
     private Integer age;
     @CSVField
-    private String lastName;
+    public String lastName;
     @CSVField
-    private String firstName;
+    public String firstName;
     private Double height;
     private Double weight;
 

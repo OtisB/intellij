@@ -32,10 +32,11 @@ public class CSVParser {
         List<Field> csvFields = new ArrayList<>();
 
         for (Field f : fields) {
-            if (f.getAnnotation(CSVEntity.class) != null) {
+            if (f.getAnnotation(CSVField.class) != null) {
                 csvFields.add(f);
             }
         }
+        System.out.println("get fields");
         return csvFields;
     }
 
