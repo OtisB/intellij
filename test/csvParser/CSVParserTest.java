@@ -5,6 +5,7 @@ import person.Person;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -45,6 +46,22 @@ public class CSVParserTest {
 
     @Test
     public void parse() {
+        String expectedContent = """
+                lastName,firstName
+                Schotte,Heiko
+                Schotte,Heiko
+                Schulz,Horst""" + NEW_LINE;
+
+        Person person1 = new Person(38, "Schotte", "Heiko", 1.78, 80.3);
+        Person person2 = new Person(38, "Schotte", "Heiko", 1.78, 80.3);
+        Person person3 = new Person(88, "Schulz", "Horst", 1.68, 75.5);
+
+        List<Person> persons = new ArrayList<>(Arrays.asList(person1, person2, person3));
+
+
+        String actualContent = new CSVParser().parse(persons);
+
+        assertEquals(expectedContent, actualContent);
     }
 
     @Test
@@ -57,9 +74,19 @@ public class CSVParserTest {
 
     @Test
     public void generateCSVContent() {
-        String expected = """
+        String expectedContent = """
                 Schotte,Heiko
                 Schotte,Heiko
-                Schulz,Horst""";
+                Schulz,Horst""" + NEW_LINE;
+
+        Person person1 = new Person(38, "Schotte", "Heiko", 1.78, 80.3);
+        Person person2 = new Person(38, "Schotte", "Heiko", 1.78, 80.3);
+        Person person3 = new Person(88, "Schulz", "Horst", 1.68, 75.5);
+
+        List<Person> persons = new ArrayList<>(Arrays.asList(person1, person2, person3));
+
+        String actualContent = new CSVParser().generateCSVContent(persons);
+
+        assertEquals(expectedContent, actualContent);
     }
 }
