@@ -3,23 +3,28 @@ import person.Person;
 import person.PersonAgeComparator;
 
 import java.awt.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-        Person p1 = new Person(65, "Geerdes", "Hans Peter", 1.86, 82.3);
-        Person p2 = new Person(69, "Geerdes", "Hans Peter", 1.86, 82.3);
-        Person p3 = new Person(67, "Geerdes", "Hans Peter", 1.86, 82.3);
+        Field[] personFields = Person.class.getDeclaredFields();
 
-        List<Person> compareList = new ArrayList<>();
-        compareList.add(p1);
-        compareList.add(p2);
-        compareList.add(p3);
+        /*
+        for(Field f : personFields) {
+            System.out.println(f.getName());
+            System.out.println(f.getType());
+            System.out.println(f.hashCode());
+        }
+*/
+        Method[] personMethods = Person.class.getDeclaredMethods();
 
-        compareList.sort(new PersonAgeComparator());
-
-        System.out.println(compareList);
+        for (Method m : personMethods) {
+            System.out.println(m.getName());
+            System.out.println(m.getReturnType());
+        }
     }
 }

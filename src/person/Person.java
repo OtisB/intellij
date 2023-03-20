@@ -1,10 +1,16 @@
 package person;
 
+import csvParser.CSVEntity;
+import csvParser.CSVField;
+
 import java.util.Objects;
 
+@CSVEntity
 public class Person {
     private Integer age;
+    @CSVField
     private String lastName;
+    @CSVField
     private String firstName;
     private Double height;
     private Double weight;
